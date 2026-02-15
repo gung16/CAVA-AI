@@ -17,6 +17,13 @@ export default function LoginPage() {
     if (isAuthed()) {
       router.replace('/dashboard');
     }
+    
+    // Check for demo query param
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('demo') === 'true') {
+      setUsername('test');
+      setPassword('test');
+    }
   }, [router]);
 
   const handleSubmit = async (e: React.FormEvent) => {

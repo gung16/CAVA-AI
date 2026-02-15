@@ -33,7 +33,11 @@ export default function SignupPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In demo mode, just redirect to login with demo credentials
-    router.push('/login?demo=true');
+    if (formData.email === 'test' && formData.password === 'test') {
+      router.push('/login?demo=true');
+    } else {
+      router.push('/login?demo=true');
+    }
   };
 
   return (
