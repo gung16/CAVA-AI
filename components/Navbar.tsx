@@ -20,16 +20,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/dashboard" className="flex items-center space-x-3">
-            <div className="relative w-10 h-10">
+            <div className="relative" style={{ width: '120px', height: '40px' }}>
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="CAVA Logo"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="text-xl font-bold text-gray-900">CAVA</span>
           </Link>
           <Button variant="ghost" onClick={handleLogout} className="text-sm">
             Keluar

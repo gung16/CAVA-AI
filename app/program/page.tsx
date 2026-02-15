@@ -174,6 +174,17 @@ export default function ProgramPage() {
                   <h2 className="text-xl font-semibold text-gray-900 mb-4">
                     {selectedExercise.name}
                   </h2>
+                  <div className="w-full aspect-video mb-4 rounded-xl overflow-hidden">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/ITv-_BkcrD0?si=dNBWLpMc7Z8Up0Gi&amp;start=3"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
                   <div className="space-y-4">
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">Tujuan</h3>
