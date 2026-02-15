@@ -30,7 +30,13 @@ export default function ProgramPage() {
     const exerciseId = searchParams.get('exercise');
     if (exerciseId) {
       const exercise = getExerciseById(exerciseId);
-      if (exercise) setSelectedExercise(exercise);
+      if (exercise) {
+        setSelectedExercise(exercise);
+      }
+    } else if (currentPlan.exercises.length > 0) {
+      // Show current exercise by default
+      const currentEx = getExerciseById(currentPlan.exercises[currentPlan.currentIndex]);
+      if (currentEx) setSelectedExercise(currentEx);
     }
   }, [searchParams]);
 
@@ -98,7 +104,8 @@ export default function ProgramPage() {
                     key={exercise.id}
                     className={`${
                       isCurrent ? 'ring-2 ring-primary' : ''
-                    } transition-all`}
+                    } transition-all cursor-pointer hover:shadow-md`}
+                    onClick={() => setSelectedExercise(exercise)}
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
